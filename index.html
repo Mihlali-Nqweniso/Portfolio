@@ -151,30 +151,30 @@
                     </section>
 
                     <!-- Projects Section -->
-                <style>
-        /* Basic styling for the body for better presentation */
+       <style>
+        /* Basic styling for the body */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #f4f5f7;
-            display: flex;
+            display: flex; /* Use flexbox for centering */
             justify-content: center;
             align-items: center;
-            padding: 40px;
             min-height: 100vh;
             margin: 0;
+            overflow: hidden; /* Prevents scrollbars during animation */
         }
 
-        /* The main container for the certifications section */
+        /* Main container for the certifications section */
         .certifications-section {
             width: 100%;
-            max-width: 400px; /* Width of the carousel viewport */
+            max-width: 600px; /* Increased max-width for a bigger carousel */
             text-align: center;
         }
 
         .certifications-section h2 {
-            font-size: 2rem; /* 32px */
+            font-size: 2.5rem; /* 40px */
             color: #1a1a1a;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-weight: 600;
         }
 
@@ -183,38 +183,42 @@
             position: relative;
         }
 
-        /* Viewport for the carousel, hides the overflow */
+        /* Viewport for the carousel */
         .carousel-viewport {
             width: 100%;
+            height: 480px; /* Increased height to match new image size */
+            position: relative;
             overflow: hidden;
-            border-radius: 8px;
-        }
-        
-        /* The track that moves left and right */
-        .certifications-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out; /* The sliding animation */
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         /* Styling for each individual certification item (the "slide") */
         .certification-item {
-            min-width: 100%; /* Each item takes up the full width of the viewport */
-            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            position: absolute; /* Stack all slides on top of each other */
+            opacity: 0; /* Hide all slides by default */
+            transition: opacity 0.6s ease-in-out;
             background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        /* Class for the currently active slide */
+        .certification-item.active {
+            opacity: 1;
+            z-index: 1; /* Bring active slide to the front */
+        }
+        
         .certification-item img {
             width: 100%;
-            height: 250px;
+            height: 380px; /* Increased image height */
             object-fit: cover;
             display: block;
-            border-bottom: 1px solid #eee;
         }
 
         .certification-name {
-            padding: 20px;
-            font-size: 1.1rem; /* 18px */
+            padding: 25px;
+            font-size: 1.25rem; /* 20px */
             font-weight: 500;
             color: #333;
         }
@@ -224,38 +228,63 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
             font-weight: bold;
             color: #333;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             z-index: 10;
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
         
         .carousel-btn:hover {
             background-color: white;
+            transform: translateY(-50%) scale(1.1);
         }
 
         .prev-btn {
-            left: -20px;
+            left: -25px;
         }
 
         .next-btn {
-            right: -20px;
+            right: -25px;
         }
-
-        /* Hides buttons when they are not needed */
+        
         .carousel-btn.hidden {
             display: none;
         }
+        
+        /* Animation Keyframes */
+        @keyframes slideInFromRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOutToLeft {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(-100%); opacity: 0; }
+        }
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOutToRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        /* Animation Classes */
+        .slide-in-right { animation: slideInFromRight 0.6s forwards; }
+        .slide-out-left { animation: slideOutToLeft 0.6s forwards; }
+        .slide-in-left { animation: slideInFromLeft 0.6s forwards; }
+        .slide-out-right { animation: slideOutToRight 0.6s forwards; }
 
     </style>
 </head>
@@ -266,43 +295,81 @@
         
         <div class="carousel-container">
             <button class="carousel-btn prev-btn" id="prevBtn">‹</button>
-            <button class="carousel-btn next-btn" id="nextBtn">›</button>
-
-            <div class="carousel-viewport">
-                <div class="certifications-track" id="certTrack">
-                    
-                    <div class="certification-item">
-                        <img src="https://picsum.photos/seed/tech1/400/300" alt="Cloud Practitioner Certification Badge">
-                        <div class="certification-name">
-                            AWS Certified Cloud Practitioner
-                        </div>
-                    </div>
-
-                    <div class="certification-item">
-                        <img src="https://picsum.photos/seed/tech2/400/300" alt="Azure Fundamentals Certification Badge">
-                        <div class="certification-name">
-                            Microsoft Certified: Azure Fundamentals
-                        </div>
-                    </div>
-
-                    <div class="certification-item">
-                        <img src="https://picsum.photos/seed/tech3/400/300" alt="Scrum Master Certification Badge">
-                        <div class="certification-name">
-                            Certified ScrumMaster® (CSM)
-                        </div>
-                    </div>
-
-                     <div class="certification-item">
-                        <img src="https://picsum.photos/seed/tech4/400/300" alt="Project Management Certification Badge">
-                        <div class="certification-name">
-                            Project Management Professional (PMP)®
-                        </div>
-                    </div>
-
+            <div class="carousel-viewport" id="carouselViewport">
+                
+                <div class="certification-item active">
+                    <img src="https://picsum.photos/seed/tech1/600/400" alt="Cloud Practitioner Certification Badge">
+                    <div class="certification-name">AWS Certified Cloud Practitioner</div>
                 </div>
+
+                <div class="certification-item">
+                    <img src="https://picsum.photos/seed/tech2/600/400" alt="Azure Fundamentals Certification Badge">
+                    <div class="certification-name">Microsoft Certified: Azure Fundamentals</div>
+                </div>
+
+                <div class="certification-item">
+                    <img src="https://picsum.photos/seed/tech3/600/400" alt="Scrum Master Certification Badge">
+                    <div class="certification-name">Certified ScrumMaster® (CSM)</div>
+                </div>
+
+                 <div class="certification-item">
+                    <img src="https://picsum.photos/seed/tech4/600/400" alt="Project Management Certification Badge">
+                    <div class="certification-name">Project Management Professional (PMP)®</div>
+                </div>
+
             </div>
+            <button class="carousel-btn next-btn" id="nextBtn">›</button>
         </div>
     </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const viewport = document.getElementById('carouselViewport');
+        const slides = Array.from(viewport.children).filter(el => el.classList.contains('certification-item'));
+        const nextButton = document.getElementById('nextBtn');
+        const prevButton = document.getElementById('prevBtn');
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        function showSlide(newIndex, direction) {
+            if (isAnimating || newIndex < 0 || newIndex >= slides.length) return;
+            isAnimating = true;
+
+            const currentSlide = slides[currentIndex];
+            const newSlide = slides[newIndex];
+
+            // Set up animation classes
+            newSlide.classList.add('active');
+            if (direction === 'next') {
+                currentSlide.classList.add('slide-out-left');
+                newSlide.classList.add('slide-in-right');
+            } else {
+                currentSlide.classList.add('slide-out-right');
+                newSlide.classList.add('slide-in-left');
+            }
+            
+            // Clean up after animation
+            newSlide.addEventListener('animationend', () => {
+                currentSlide.classList.remove('active', 'slide-out-left', 'slide-out-right');
+                newSlide.classList.remove('slide-in-left', 'slide-in-right');
+                isAnimating = false;
+            }, { once: true });
+
+            currentIndex = newIndex;
+            updateNavButtons();
+        }
+        
+        function updateNavButtons() {
+            prevButton.classList.toggle('hidden', currentIndex === 0);
+            nextButton.classList.toggle('hidden', currentIndex === slides.length - 1);
+        }
+
+        nextButton.addEventListener('click', () => showSlide(currentIndex + 1, 'next'));
+        prevButton.addEventListener('click', () => showSlide(currentIndex - 1, 'prev'));
+
+        updateNavButtons(); // Initial call
+    });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -328,7 +395,7 @@
                 prevButton.classList.remove('hidden');
             }
 
-            if (currentIndex === slides.length - 1) {
+            if (currentIndex === slides. length - 1) {
                 nextButton.classList.add('hidden');
             } else {
                 nextButton.classList.remove('hidden');
