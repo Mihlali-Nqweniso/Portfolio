@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'humanist', sans-serif;
-            background-color: #1b3c57;
+            /* The primary body font is set here to avoid conflicts */
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f5f7; /* Consistent background color */
         }
         ::-webkit-scrollbar {
             width: 8px;
@@ -41,43 +42,35 @@
 
     <div class="max-w-7xl mx-auto lg:p-8 p-4">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-            <!-- Left Sidebar -->
             <aside class="lg:col-span-4 lg:sticky lg:top-8 h-full">
                 <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center lg:items-start text-center lg:text-left h-full min-h-[calc(100vh-4rem)]">
-                    <!-- Profile Picture and Info -->
                     <div class="w-full flex flex-col items-center">
-<style>
-
-                         .profile-glow {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        padding: 4px; /* Creates space for the gradient */
-        background: linear-gradient(to right, #ffbe20, #e91e63, #9c27b0);
-        box-shadow: 0 0 15px rgba(233, 30, 99, 0.7);
-    }
-    .profile-glow img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-        border: 3px solid white; /* Inner border for separation */
-        box-sizing: border-box;
-    }
-</style>
-</head>
-<body>
-
-    <div class="profile-glow">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQFdC5icVDl9NQ/profile-displayphoto-scale_400_400/B56ZlEMGDXHAAg-/0/1757785647257?e=1760572800&v=beta&t=bK9U7EbSwJ09yJ_XGB2BW14uoTXssy7abG4JQjqQSZE" alt="Profile Picture">
-    </div>
-
+                        <style>
+                            .profile-glow {
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 50%;
+                                padding: 4px; /* Creates space for the gradient */
+                                background: linear-gradient(to right, #ffbe20, #e91e63, #9c27b0);
+                                box-shadow: 0 0 15px rgba(233, 30, 99, 0.7);
+                            }
+                            .profile-glow img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                                object-fit: cover;
+                                display: block;
+                                border: 3px solid white; /* Inner border for separation */
+                                box-sizing: border-box;
+                            }
+                        </style>
+                        <div class="profile-glow mb-4">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFdC5icVDl9NQ/profile-displayphoto-scale_400_400/B56ZlEMGDXHAAg-/0/1757785647257?e=1760572800&v=beta&t=bK9U7EbSwJ09yJ_XGB2BW14uoTXssy7abG4JQjqQSZE" alt="Profile Picture">
+                        </div>
                         <h1 class="text-3xl font-bold text-slate-900">Mihlali Nqweniso</h1>
                         <p class="text-lg text-sky-700 mt-1">AI & ML | Software | Network Engineer</p>
                         <p class="text-sm text-slate-500 mt-2 max-w-xs">Building elegant digital experiences focusing on performance and user-centric design.</p>
                     </div>
-                    <!-- Navigation -->
                     <nav id="nav-menu" class="w-full mt-10 hidden lg:block">
                         <ul class="space-y-2">
                             <li><a href="#about" class="nav-link flex items-center py-2.5 px-4 rounded-lg text-slate-600 hover:bg-sky-50 transition-colors duration-200">
@@ -88,9 +81,9 @@
                                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 Experience
                             </a></li>
-                             <li><a href="#projects" class="nav-link flex items-center py-2.5 px-4 rounded-lg text-slate-600 hover:bg-sky-50 transition-colors duration-200">
+                             <li><a href="#certifications" class="nav-link flex items-center py-2.5 px-4 rounded-lg text-slate-600 hover:bg-sky-50 transition-colors duration-200">
                                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                Projects
+                                Certifications
                             </a></li>
                             <li><a href="#skills" class="nav-link flex items-center py-2.5 px-4 rounded-lg text-slate-600 hover:bg-sky-50 transition-colors duration-200">
                                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
@@ -103,7 +96,6 @@
                         </ul>
                     </nav>
 
-                    <!-- Social Links -->
                     <div class="mt-auto pt-8 w-full">
                         <div class=" flex justify-center lg:justify-start space-x-4">
                             <a href="https://www.linkedin.com/in/mihlali-nqweniso-46179720a/" class="text-slate-400 hover:text-sky-600" aria-label="LinkedIn Profile">
@@ -118,20 +110,16 @@
                 </div>
             </aside>
 
-            <!-- Right Main Content -->
             <main class="lg:col-span-8 mt-8 lg:mt-0">
                 <div class="space-y-8">
-                    <!-- About Section -->
                     <section id="about" class="bg-white rounded-2xl shadow-lg p-8 scroll-mt-24">
                         <h2 class="text-2xl font-bold text-slate-900 mb-4">About Me</h2>
                         <div class="space-y-4 text-slate-600">
                             <p>I am passionate about everything Tech-related. I have a strong background in software development and proven experience in various projects, using a large set of programming languages like Java, Python, C#, and other front-end languages like HTML5, CSS3, and JavaScript. Then frameworks like Node, .Net Framework and Swing. </p>
-
-<p>I have experience as an IT Support Specialist and a Network Technician. I have experience building AI agents that automate day-to-day tasks and learn independently to improve their capabilities and accuracy. I use Tools like Teachable Machine, N8N, and Zapier to achieve these goals. I am certified by many reputable institutions including Cisco, Google and IBM. </p>
+                            <p>I have experience as an IT Support Specialist and a Network Technician. I have experience building AI agents that automate day-to-day tasks and learn independently to improve their capabilities and accuracy. I use Tools like Teachable Machine, N8N, and Zapier to achieve these goals. I am certified by many reputable institutions including Cisco, Google and IBM. </p>
                         </div>
                     </section>
                     
-                    <!-- Experience Section -->
                     <section id="experience" class="bg-white rounded-2xl shadow-lg p-8 scroll-mt-24">
                         <h2 class="text-2xl font-bold text-slate-900 mb-6">Work Experience</h2>
                         <div class="space-y-8 border-l-2 border-slate-200 pl-6">
@@ -150,275 +138,106 @@
                         </div>
                     </section>
 
-                    <!-- Projects Section -->
-       <style>
-        /* Basic styling for the body */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f4f5f7;
-            display: flex; /* Use flexbox for centering */
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+                    <section id="certifications" class="scroll-mt-24">
+                        <style>
+                            /* Scoped styles for the certifications carousel */
+                            .certifications-section {
+                                width: 100%;
+                                max-width: 600px;
+                                text-align: center;
+                                margin: auto; /* This helps with centering in the flex container */
+                            }
+                            .carousel-container {
+                                position: relative;
+                            }
+                            .carousel-viewport {
+                                width: 100%;
+                                height: 480px;
+                                position: relative;
+                                overflow: hidden;
+                                border-radius: 12px;
+                                background-color: white; /* Add a background for slides */
+                                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                            }
+                            .certification-item {
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                opacity: 0;
+                                transition: opacity 0.6s ease-in-out;
+                            }
+                            .certification-item.active {
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                            .certification-item img {
+                                width: 100%;
+                                height: 380px;
+                                object-fit: cover;
+                            }
+                            .certification-name {
+                                padding: 25px;
+                                font-size: 1.25rem;
+                                font-weight: 500;
+                                color: #333;
+                            }
+                            .carousel-btn {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                background-color: rgba(255, 255, 255, 0.9);
+                                border: none;
+                                border-radius: 50%;
+                                width: 50px;
+                                height: 50px;
+                                font-size: 30px;
+                                cursor: pointer;
+                                z-index: 10;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: transform 0.2s ease;
+                            }
+                            .carousel-btn:hover { transform: translateY(-50%) scale(1.1); }
+                            .prev-btn { left: -25px; }
+                            .next-btn { right: -25px; }
+                            .carousel-btn.hidden { display: none; }
+                            @keyframes slideInFromRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+                            @keyframes slideOutToLeft { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-100%); opacity: 0; } }
+                            @keyframes slideInFromLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+                            @keyframes slideOutToRight { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+                            .slide-in-right { animation: slideInFromRight 0.6s forwards; }
+                            .slide-out-left { animation: slideOutToLeft 0.6s forwards; }
+                            .slide-in-left { animation: slideInFromLeft 0.6s forwards; }
+                            .slide-out-right { animation: slideOutToRight 0.6s forwards; }
+                        </style>
+                        <div class="certifications-section bg-white rounded-2xl shadow-lg p-8">
+                            <h2 class="text-3xl font-bold text-slate-900 mb-6">Certifications 🏆</h2>
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev-btn" id="prevBtn">‹</button>
+                                <div class="carousel-viewport" id="carouselViewport">
+                                    <div class="certification-item active">
+                                        <img src="https://picsum.photos/seed/tech1/600/400" alt="Certification Badge">
+                                        <div class="certification-name">AWS Certified Cloud Practitioner</div>
+                                    </div>
+                                    <div class="certification-item">
+                                        <img src="https://picsum.photos/seed/tech2/600/400" alt="Certification Badge">
+                                        <div class="certification-name">Microsoft Certified: Azure Fundamentals</div>
+                                    </div>
+                                    <div class="certification-item">
+                                        <img src="https://picsum.photos/seed/tech3/600/400" alt="Certification Badge">
+                                        <div class="certification-name">Certified ScrumMaster® (CSM)</div>
+                                    </div>
+                                    <div class="certification-item">
+                                        <img src="https://picsum.photos/seed/tech4/600/400" alt="Certification Badge">
+                                        <div class="certification-name">Project Management Professional (PMP)®</div>
+                                    </div>
+                                </div>
+                                <button class="carousel-btn next-btn" id="nextBtn">›</button>
+                            </div>
+                        </div>
+                    </section>
 
-        /* Main container for the certifications section */
-        .certifications-section {
-            width: 100%;
-            max-width: 600px; /* Increased max-width for a bigger carousel */
-            text-align: center;
-        }
-
-        .certifications-section h2 {
-            font-size: 2.5rem; /* 40px */
-            color: #1a1a1a;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        /* Carousel container */
-        .carousel-container {
-            position: relative;
-        }
-
-        /* Viewport for the carousel */
-        .carousel-viewport {
-            width: 100%;
-            height: 480px; /* Increased height to match new image size */
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Styling for each individual certification item (the "slide") */
-        .certification-item {
-            width: 100%;
-            height: 100%;
-            position: absolute; /* Stack all slides on top of each other */
-            opacity: 0; /* Hide all slides by default */
-            transition: opacity 0.6s ease-in-out;
-            background-color: #ffffff;
-        }
-
-        /* Class for the currently active slide */
-        .certification-item.active {
-            opacity: 1;
-            z-index: 1; /* Bring active slide to the front */
-        }
-        
-        .certification-item img {
-            width: 100%;
-            height: 380px; /* Increased image height */
-            object-fit: cover;
-            display: block;
-        }
-
-        .certification-name {
-            padding: 25px;
-            font-size: 1.25rem; /* 20px */
-            font-weight: 500;
-            color: #333;
-        }
-
-        /* Navigation Buttons */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 30px;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            z-index: 10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-        
-        .carousel-btn:hover {
-            background-color: white;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .prev-btn {
-            left: -25px;
-        }
-
-        .next-btn {
-            right: -25px;
-        }
-        
-        .carousel-btn.hidden {
-            display: none;
-        }
-        
-        /* Animation Keyframes */
-        @keyframes slideInFromRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOutToLeft {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(-100%); opacity: 0; }
-        }
-        @keyframes slideInFromLeft {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOutToRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-
-        /* Animation Classes */
-        .slide-in-right { animation: slideInFromRight 0.6s forwards; }
-        .slide-out-left { animation: slideOutToLeft 0.6s forwards; }
-        .slide-in-left { animation: slideInFromLeft 0.6s forwards; }
-        .slide-out-right { animation: slideOutToRight 0.6s forwards; }
-
-    </style>
-</head>
-<body>
-
-    <section class="certifications-section">
-        <h2>Certifications 🏆</h2>
-        
-        <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="prevBtn">‹</button>
-            <div class="carousel-viewport" id="carouselViewport">
-                
-                <div class="certification-item active">
-                    <img src="https://picsum.photos/seed/tech1/600/400" alt="Cloud Practitioner Certification Badge">
-                    <div class="certification-name">AWS Certified Cloud Practitioner</div>
-                </div>
-
-                <div class="certification-item">
-                    <img src="https://picsum.photos/seed/tech2/600/400" alt="Azure Fundamentals Certification Badge">
-                    <div class="certification-name">Microsoft Certified: Azure Fundamentals</div>
-                </div>
-
-                <div class="certification-item">
-                    <img src="https://picsum.photos/seed/tech3/600/400" alt="Scrum Master Certification Badge">
-                    <div class="certification-name">Certified ScrumMaster® (CSM)</div>
-                </div>
-
-                 <div class="certification-item">
-                    <img src="https://picsum.photos/seed/tech4/600/400" alt="Project Management Certification Badge">
-                    <div class="certification-name">Project Management Professional (PMP)®</div>
-                </div>
-
-            </div>
-            <button class="carousel-btn next-btn" id="nextBtn">›</button>
-        </div>
-    </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const viewport = document.getElementById('carouselViewport');
-        const slides = Array.from(viewport.children).filter(el => el.classList.contains('certification-item'));
-        const nextButton = document.getElementById('nextBtn');
-        const prevButton = document.getElementById('prevBtn');
-        let currentIndex = 0;
-        let isAnimating = false;
-
-        function showSlide(newIndex, direction) {
-            if (isAnimating || newIndex < 0 || newIndex >= slides.length) return;
-            isAnimating = true;
-
-            const currentSlide = slides[currentIndex];
-            const newSlide = slides[newIndex];
-
-            // Set up animation classes
-            newSlide.classList.add('active');
-            if (direction === 'next') {
-                currentSlide.classList.add('slide-out-left');
-                newSlide.classList.add('slide-in-right');
-            } else {
-                currentSlide.classList.add('slide-out-right');
-                newSlide.classList.add('slide-in-left');
-            }
-            
-            // Clean up after animation
-            newSlide.addEventListener('animationend', () => {
-                currentSlide.classList.remove('active', 'slide-out-left', 'slide-out-right');
-                newSlide.classList.remove('slide-in-left', 'slide-in-right');
-                isAnimating = false;
-            }, { once: true });
-
-            currentIndex = newIndex;
-            updateNavButtons();
-        }
-        
-        function updateNavButtons() {
-            prevButton.classList.toggle('hidden', currentIndex === 0);
-            nextButton.classList.toggle('hidden', currentIndex === slides.length - 1);
-        }
-
-        nextButton.addEventListener('click', () => showSlide(currentIndex + 1, 'next'));
-        prevButton.addEventListener('click', () => showSlide(currentIndex - 1, 'prev'));
-
-        updateNavButtons(); // Initial call
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const track = document.getElementById('certTrack');
-        const slides = Array.from(track.children);
-        const nextButton = document.getElementById('nextBtn');
-        const prevButton = document.getElementById('prevBtn');
-
-        let currentIndex = 0;
-
-        // Function to move the track
-        const moveToSlide = (targetIndex) => {
-            track.style.transform = 'translateX(-' + targetIndex * 100 + '%)';
-            currentIndex = targetIndex;
-            updateNavButtons();
-        };
-
-        // Update button visibility
-        const updateNavButtons = () => {
-            if (currentIndex === 0) {
-                prevButton.classList.add('hidden');
-            } else {
-                prevButton.classList.remove('hidden');
-            }
-
-            if (currentIndex === slides. length - 1) {
-                nextButton.classList.add('hidden');
-            } else {
-                nextButton.classList.remove('hidden');
-            }
-        };
-
-        // Click listeners for the buttons
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < slides.length - 1) {
-                moveToSlide(currentIndex + 1);
-            }
-        });
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                moveToSlide(currentIndex - 1);
-            }
-        });
-
-        // Initialize the carousel state
-        updateNavButtons();
-    });
-</script>
-                    <!-- Skills Section -->
                     <section id="skills" class="bg-white rounded-2xl shadow-lg p-8 scroll-mt-24">
                         <h2 class="text-2xl font-bold text-slate-900 mb-6">Technical Skills</h2>
                         <div class="flex flex-wrap gap-2">
@@ -433,7 +252,6 @@
                         </div>
                     </section>
                     
-                    <!-- Education Section -->
                     <section id="education" class="bg-white rounded-2xl shadow-lg p-8 scroll-mt-24">
                         <h2 class="text-2xl font-bold text-slate-900 mb-6">Education</h2>
                         <div>
@@ -446,183 +264,57 @@
         </div>
     </div>
     
-    <!-- Add Project Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-slate-900 bg-opacity-50 flex items-center justify-center p-4 modal-backdrop opacity-0 pointer-events-none z-50">
-        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg transform -translate-y-10 transition-transform duration-300">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-slate-800">Add a New Project</h3>
-                <button id="close-modal-btn" class="text-slate-400 hover:text-slate-600">&times;</button>
-            </div>
-            <form id="project-form">
-                <div class="space-y-4">
-                    <div>
-                        <label for="title" class="block text-sm font-medium text-slate-700">Project Title</label>
-                        <input type="text" id="title" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500" required>
-                    </div>
-                    <div>
-                        <label for="description" class="block text-sm font-medium text-slate-700">Description</label>
-                        <textarea id="description" rows="3" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500" required></textarea>
-                    </div>
-                    <div>
-                        <label for="image-url" class="block text-sm font-medium text-slate-700">Image URL</label>
-                        <input type="url" id="image-url" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500" placeholder="https://..." required>
-                    </div>
-                    <div>
-                        <label for="live-url" class="block text-sm font-medium text-slate-700">Live Demo URL</label>
-                        <input type="url" id="live-url" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500" placeholder="https://...">
-                    </div>
-                    <div>
-                        <label for="github-url" class="block text-sm font-medium text-slate-700">GitHub URL</label>
-                        <input type="url" id="github-url" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500" placeholder="https://...">
-                    </div>
-                </div>
-                <div class="mt-6 flex justify-end">
-                    <button type="submit" class="bg-sky-600 text-white font-semibold py-2.5 px-6 rounded-lg hover:bg-sky-700 transition-colors duration-300 shadow-md">
-                        Save Project
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Certifications Carousel Logic ---
+            const viewport = document.getElementById('carouselViewport');
+            // Ensure viewport exists before proceeding
+            if (viewport) {
+                const slides = Array.from(viewport.children).filter(el => el.classList.contains('certification-item'));
+                const nextButton = document.getElementById('nextBtn');
+                const prevButton = document.getElementById('prevBtn');
+                let currentIndex = 0;
+                let isAnimating = false;
 
+                function showSlide(newIndex, direction) {
+                    if (isAnimating || newIndex < 0 || newIndex >= slides.length) return;
+                    isAnimating = true;
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, onSnapshot, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+                    const currentSlide = slides[currentIndex];
+                    const newSlide = slides[newIndex];
 
-        // --- Firebase Setup ---
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" };
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-portfolio-app';
+                    newSlide.classList.add('active');
+                    if (direction === 'next') {
+                        currentSlide.classList.add('slide-out-left');
+                        newSlide.classList.add('slide-in-right');
+                    } else {
+                        currentSlide.classList.add('slide-out-right');
+                        newSlide.classList.add('slide-in-left');
+                    }
+                    
+                    newSlide.addEventListener('animationend', () => {
+                        currentSlide.classList.remove('active', 'slide-out-left', 'slide-out-right');
+                        newSlide.classList.remove('slide-in-left', 'slide-in-right');
+                        isAnimating = false;
+                    }, { once: true });
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        let userId;
-
-        // --- Authentication ---
-        async function setupAuth() {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
+                    currentIndex = newIndex;
+                    updateNavButtons();
                 }
-                userId = auth.currentUser?.uid || crypto.randomUUID();
-                setupProjectListener();
-            } catch (error) {
-                console.error("Authentication failed:", error);
-                // Fallback userId if all auth fails
-                userId = crypto.randomUUID();
-                setupProjectListener();
-            }
-        }
-
-
-        // --- Firestore Logic ---
-        function setupProjectListener() {
-            if (!userId) {
-                console.error("User not authenticated, cannot fetch projects.");
-                return;
-            }
-            const projectsCollectionPath = `/artifacts/${appId}/users/${userId}/projects`;
-            const projectsCollection = collection(db, projectsCollectionPath);
-            const q = query(projectsCollection);
-
-            onSnapshot(q, (snapshot) => {
-                const projectsContainer = document.getElementById('projects-container');
-                const noProjectsMsg = document.getElementById('no-projects-msg');
-                projectsContainer.innerHTML = '';
-                if (snapshot.empty) {
-                    noProjectsMsg.classList.remove('hidden');
-                } else {
-                    noProjectsMsg.classList.add('hidden');
-                    snapshot.forEach(doc => {
-                        const project = doc.data();
-                        const card = createProjectCard(project);
-                        projectsContainer.appendChild(card);
-                    });
+                
+                function updateNavButtons() {
+                    if (!prevButton || !nextButton) return;
+                    prevButton.classList.toggle('hidden', currentIndex === 0);
+                    nextButton.classList.toggle('hidden', currentIndex === slides.length - 1);
                 }
-            });
-        }
 
-        async function addProject(projectData) {
-            if (!userId) {
-                console.error("User not authenticated, cannot add project.");
-                return;
+                nextButton.addEventListener('click', () => showSlide(currentIndex + 1, 'next'));
+                prevButton.addEventListener('click', () => showSlide(currentIndex - 1, 'prev'));
+
+                updateNavButtons();
             }
-             const projectsCollectionPath = `/artifacts/${appId}/users/${userId}/projects`;
-            try {
-                await addDoc(collection(db, projectsCollectionPath), projectData);
-                console.log("Project added successfully");
-            } catch (error) {
-                console.error("Error adding project: ", error);
-            }
-        }
 
-        // --- UI Logic ---
-        function createProjectCard(project) {
-            const card = document.createElement('div');
-            card.className = "bg-slate-50 rounded-xl border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300";
-            card.innerHTML = `
-                <img src="${project.imageUrl}" alt="Project image for ${project.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e0f2fe/333?text=Image';">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-lg font-semibold text-slate-800">${project.title}</h3>
-                    <p class="text-slate-600 mt-2 text-sm flex-grow">${project.description}</p>
-                    <div class="flex space-x-4 mt-5">
-                        ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 font-medium">Live Demo</a>` : ''}
-                        ${project.githubUrl ? `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-800 font-medium">GitHub</a>` : ''}
-                    </div>
-                </div>
-            `;
-            return card;
-        }
-        
-        // --- Modal Handling ---
-        const modal = document.getElementById('project-modal');
-        const modalContent = document.getElementById('modal-content');
-        const addProjectBtn = document.getElementById('add-project-btn');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        
-        const openModal = () => {
-            modal.classList.remove('pointer-events-none', 'opacity-0');
-            modalContent.classList.remove('-translate-y-10');
-        };
-        
-        const closeModal = () => {
-            modal.classList.add('opacity-0');
-            modalContent.classList.add('-translate-y-10');
-            setTimeout(() => modal.classList.add('pointer-events-none'), 300);
-        };
-
-        addProjectBtn.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // --- Form Submission ---
-        const projectForm = document.getElementById('project-form');
-        projectForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const projectData = {
-                title: document.getElementById('title').value,
-                description: document.getElementById('description').value,
-                imageUrl: document.getElementById('image-url').value,
-                liveUrl: document.getElementById('live-url').value,
-                githubUrl: document.getElementById('github-url').value,
-            };
-            addProject(projectData);
-            projectForm.reset();
-            closeModal();
-        });
-
-        // --- Initial Load ---
-        document.addEventListener('DOMContentLoaded', () => {
-             // Navigation Scroll Logic
+            // --- Navigation Scroll Logic ---
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('#nav-menu a');
             const observer = new IntersectionObserver((entries) => {
@@ -638,11 +330,15 @@
                 });
             }, { rootMargin: '-30% 0px -70% 0px' });
             sections.forEach(section => observer.observe(section));
-            if(navLinks.length > 0) navLinks[0].classList.add('active');
-            
-            setupAuth();
+            if(navLinks.length > 0) {
+                // Set initial active link based on what's visible, fallback to first
+                setTimeout(() => {
+                    if (!document.querySelector('.nav-link.active')) {
+                         navLinks[0].classList.add('active');
+                    }
+                }, 100);
+            }
         });
     </script>
 </body>
 </html>
-
