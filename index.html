@@ -13,8 +13,11 @@
             font-family: 'Inter', sans-serif;
             background-color: #051129;
           }
-         aside {
-               position: fixed;
+         .lg\:col-span-4 {
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
 }            
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -38,8 +41,8 @@
 
     <div class="max-w-7xl mx-auto lg:p-8 p-4">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-            <aside class="lg:col-span-4 lg:sticky lg:top-8 h-full">
-                <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center lg:items-start text-center lg:text-left h-full min-h-[calc(100vh-4rem)]">
+          <aside class="lg:col-span-4 h-full">          
+              <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center lg:items-start text-center lg:text-left h-full min-h-[calc(100vh-4rem)]">
                     <div class="w-full flex flex-col items-center">
                         <style>
                             .profile-glow { width: 120px; height: 120px; border-radius: 50%; padding: 4px; background: linear-gradient(to right, #ffbe20, #e91e63, #9c27b0); box-shadow: 0 0 15px rgba(233, 30, 99, 0.7); }
